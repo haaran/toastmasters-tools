@@ -14,7 +14,7 @@
                 <span class="title">Toastmasters Tools</span>
                 <nav class="nav">
                     <ul>
-                        <li>{{ HTML::link('tools/members', 'Members') }}</li>
+                        <li>{{ HTML::link('tools/members', 'Member List') }}</li>
                         <li>{{ HTML::link('tools/quorum', 'Quorum Calculator') }}</li>
                         <li>{{ HTML::link('tools/weeks', 'Weeks Since Last Speech') }}</li>
                     </ul>
@@ -28,5 +28,7 @@
 
             <footer id="footer">Andrew Judd &copy; 2013 All rights reserved</footer>
         </div>
+
+        {{ Asset::scripts() }}
     </body>
 </html>

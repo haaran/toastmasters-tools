@@ -14,7 +14,7 @@ return array(
 	|
 	*/
 
-	'profile' => true,
+	'profile' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -72,7 +72,7 @@ return array(
 			'host'     => '127.0.0.1',
 			'database' => 'database',
 			'username' => 'root',
-			'password' => 'william',
+			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),

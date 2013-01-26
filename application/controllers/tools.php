@@ -32,7 +32,12 @@ class Tools_Controller extends Base_Controller {
 
 	public function action_index()
 	{
-		$this->layout->nest('tool-list', 'index');
+		$this->layout->nest('tool-list', 'tools/index');
 	}
+
+    public function action_members()
+    {
+        $this->layout->nest('tool-list', 'tools/members');
+    }
 
 }

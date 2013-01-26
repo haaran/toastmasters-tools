@@ -10,6 +10,13 @@ class Base_Controller extends Controller
         Asset::add('reset', 'css/reset.css');
         Asset::add('style', 'css/style.css');
 
+        // Third party styles
+        Asset::add('slick-css', 'css/slick.grid.css');
+
+        // Third party libraries
+        Asset::add('jquery', 'http://code.jquery.com/jquery-1.9.0.min.js');
+        Asset::add('slick-js', 'js/slick.grid.js');
+
         parent::__construct();
     }
 
