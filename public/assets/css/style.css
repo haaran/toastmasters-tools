@@ -55,6 +55,13 @@ a {
     margin: 10px 10px 10px 10px;
 }
 
+#user {
+    float: right;
+    width: 250px;
+    border-bottom: 2px solid #EAEAEA;
+    border-left: 2px solid #EAEAEA;
+}
+
 #footer {
     text-align: center;
     margin-top: 10px;
@@ -64,4 +71,23 @@ h1 {
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+th {
+    font-weight: bold;
+}
+
+#members, #members th, #members td {
+    border: 1px solid #000000;
+    padding: 5px 5px 5px 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.hidden {
+    display: none;
 }

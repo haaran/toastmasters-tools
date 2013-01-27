@@ -37,7 +37,8 @@ class Tools_Controller extends Base_Controller {
 
     public function action_members()
     {
-        $this->layout->nest('tool-list', 'tools/members');
+        $members=$this->club->members()->get();
+        $this->layout->nest('tool-list', 'tools/members', array('members'=>$members));
     }
 
 }

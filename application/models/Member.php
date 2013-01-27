@@ -10,6 +10,6 @@ class Member extends Eloquent
 
     public function clubs()
     {
-        return $this->has_many_and_belongs_to('Club', 'club_member')->get();
+        return $this->has_many_and_belongs_to('Club', 'club_member');
     }
 }

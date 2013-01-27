@@ -30,8 +30,9 @@ class Initialsetup {
 
             $table->string('name', 100);
             $table->string('email_address', 365);
-            $table->string('designation', 50);
-            $table->date('birthdate');
+            $table->string('title', 50);
+            $table->integer('month_of_birth')->unsigned();
+            $table->timestamps();
         });
 
         Schema::create('club_member', function($table){
@@ -41,6 +42,8 @@ class Initialsetup {
             $table->integer('member_id')->unsigned();
             $table->date('join_date');
             $table->date('last_attended');
+            $table->date('last_speech');
+            $table->text('speech_description', 20);
             $table->boolean('is_active');
             $table->timestamps();
             $table->unique(array('club_id', 'member_id'));

@@ -93,6 +93,31 @@ Event::listen('500', function()
 |
 */
 
+Route::post('/login', function(){
+    // get the posted data
+    $user_data=array(
+        'username'=>Input::get('club_number')
+        , 'password'=>Input::get('password')
+    );
+
+    // Try to authenticate
+    if(Auth::attempt($user_data))
+    {
+        // Logged in, so return them to where they were
+        return Redirect::to('home');
+    }
+    else
+    {
+        // Return to where they came from with error messages
+        return Redirect::home()->with('login_errors', true);
+    }
+});
+
+Route::get('logout', function(){
+    Auth::logout();
+    Redirect::home();
+});
+
 Route::filter('before', function()
 {
 	// Do stuff before every request to your application...

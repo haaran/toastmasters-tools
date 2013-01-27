@@ -4,6 +4,7 @@ class Base_Controller extends Controller
 {
 
     public $layout = 'layout/index';
+    protected $club=NULL;
 
     public function __construct()
     {
@@ -11,13 +12,32 @@ class Base_Controller extends Controller
         Asset::add('style', 'css/style.css');
 
         // Third party styles
-        Asset::add('slick-css', 'css/slick.grid.css');
+        Asset::add('slick-css', 'css/ingrid.css');
 
         // Third party libraries
-        Asset::add('jquery', 'http://code.jquery.com/jquery-1.9.0.min.js');
-        Asset::add('slick-js', 'js/slick.grid.js');
+        Asset::add('jquery', 'js/third-party/jquery.js');
+        /*Asset::add('jquery-layout-js', 'js/third-party/jquery.layout.js');
+        Asset::add('jquery-ui-js', 'js/third-party/jquery-ui-custom.min.js');
+
+        Asset::add('jqGrid-js', 'js/third-party/jquery.jqGrid.js');*/
+        Asset::add('table-js', 'js/table.js');
+        Asset::add('setup-table-js', 'js/setup-table.js');
+
+        // Personal
+        Asset::add('member-js', 'js/member.js');
 
         parent::__construct();
+
+        // Check if the user is logged in or not
+        if(Auth::guest())
+        {
+            $this->layout->nest('login', 'layout/login');
+        }
+        else
+        {
+            $this->club=Auth::user();
+            $this->layout->nest('login', 'layout/welcome', array('club'=>$this->club));
+        }
     }
 
 	/**

@@ -21,10 +21,16 @@
                 </nav>
             </header>
 
+            <aside id="user">
+                @yield('user-panel')
+            </aside>
+
             <section id="main">
                 <h1>@yield('page-name')</h1>
                 @yield('content')
             </section>
+
+            <div class="clear"></div>
 
             <footer id="footer">Andrew Judd &copy; 2013 All rights reserved</footer>
         </div>
