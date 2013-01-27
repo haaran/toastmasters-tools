@@ -36,12 +36,14 @@ class Initialsetup {
 
         Schema::create('club_member', function($table){
             $table->engine='InnoDB';
+            $table->increments('id');
             $table->integer('club_id')->unsigned();
             $table->integer('member_id')->unsigned();
             $table->date('join_date');
             $table->date('last_attended');
             $table->boolean('is_active');
-            $table->primary(array('club_id', 'member_id'));
+            $table->timestamps();
+            $table->unique(array('club_id', 'member_id'));
             $table->foreign('club_id')->references('id')->on('clubs');
             $table->foreign('member_id')->references('id')->on('members');
         });

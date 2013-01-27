@@ -6,10 +6,10 @@
  */
 class Club extends Eloquent
 {
-    public $table='clubs';
+    public static $table='clubs';
 
     public function members()
     {
-        return $this->has_many_belongs_to('Member', 'club_member')->with('club_id');
+        return $this->has_many_and_belongs_to('Member', 'club_member')->get();
     }
 }
